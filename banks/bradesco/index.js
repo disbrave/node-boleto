@@ -4,7 +4,7 @@ var ediHelper = require('../../lib/edi-helper')
 var helper = require('./helper')
 
 exports.options = {
-  logoURL: 'https://assets.pagar.me/boleto/images/bradesco.jpg',
+  logoURL: 'https://www.bsbdisbrave.com.br/wp-content/uploads/2020/03/logo-bsb-disbrave.png',
   codigo: '237'
 }
 
