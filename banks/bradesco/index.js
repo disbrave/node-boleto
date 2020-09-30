@@ -4,6 +4,7 @@ var ediHelper = require('../../lib/edi-helper')
 var helper = require('./helper')
 
 exports.options = {
+  //testar logo local
   logoURL: 'https://www.bsbdisbrave.com.br/wp-content/uploads/2020/09/logo-bsb-disbrave.png',
   codigo: '237'
 }
@@ -13,6 +14,7 @@ exports.dvBarra = function (barra) {
   return (resto2 == 0 || resto2 == 1 || resto2 == 10) ? 1 : 11 - resto2
 }
 
+//testar resultado do codigo de barras com boletos já existentes
 exports.barcodeData = function (boleto) {
   var codigoBanco = this.options.codigo
   var numMoeda = '9'
