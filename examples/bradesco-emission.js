@@ -13,6 +13,7 @@ var boleto = new Boleto({
   'nosso_numero': '6',
   'numero_documento': '1',
   'cedente': 'Pagar.me Pagamentos S/A',
+  'num_aviso':'53',
   'cedente_cnpj': '18727053000174',
   'agencia': '1229',
   'codigo_cedente': '469',

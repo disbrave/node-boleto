@@ -182,24 +182,24 @@
         </tr>
     </table><table class="w666">
         <tr class="ct h13">
-            <td class="w192">Número do documento</td>
             <td class="w132">CPF/CNPJ</td>
+            <td class="w192">Número do aviso</td>
             <td class="w134">Vencimento</td>
             <td class="w180">Valor documento</td>
         </tr>
         <tr class="cp h12 rBb">
-			<td><%= addTrailingZeros(boleto['numero_documento'], 9) %></td>
-			<td><%= boleto['cedente_cnpj'] %></td>
+            <td><%= boleto['cedente_cnpj'] %></td>
+            <td><%= boleto['num_aviso']%></td>
 			<td><%= formatDate(boleto['data_vencimento']) %></td>
 			<td class="Ar"><%= formatAmount(boleto['valor']) %></td>
         </tr>
     </table><table class="w666">
         <tr class="ct h13">
-            <td class="w113">(-) Desconto / Abatimentos</td>
-            <td class="w112">(-) Outras deduções</td>
-            <td class="w113">(+) Mora / Multa</td>
-            <td class="w113">(+) Outros acréscimos</td>
-            <td class="w180">(=) Valor cobrado</td>
+            <td class="w180">Grupo / Cota / Situação</td>
+            <td class="w112">Número Assembléia</td>
+            <td class="w113">Data Assembléia</td>
+            <td class="w113">Hora Assembléia</td>
+            <td class="w113">Valor do Bem</td>
         </tr>
         <tr class="cp h12 rBb Ab">
             <td></td>
@@ -263,16 +263,16 @@
     </table><table class="w666">
         <tr class="ct h13">
             <td class="w113">Data do documento</td>
-            <td class="w163">N<u>o</u> documento</td>
+            <td class="w113">Número do aviso</td>
             <td class="w62">Espécie doc.</td>
             <td class="w34">Aceite</td>
-            <td class="w72">Data processamento</td>
+            <td class="w130">Data processamento</td>
             <td class="w180">Carteira / Nosso número</td>
         </tr>
         <tr class="cp h12 rBb">
-			<td><%= formatDate(boleto['data_emissao']) %></td>
-			<td><%= addTrailingZeros(boleto['numero_documento'], 9) %></td>
-            <td>DM</td>
+            <td><%= formatDate(boleto['data_emissao']) %></td>
+            <td ><%= boleto['num_aviso']%></td>
+            <td><%= boleto['especie_doc'] %></td>
             <td>N</td>
 			<td><%= formatDate(boleto['data_emissao']) %></td>
 			<td class="Ar"><%= addTrailingZeros(boleto['nosso_numero'], 12) %>-<%= boleto['nosso_numero_dv'] %></td>
@@ -282,7 +282,7 @@
             <td class="w113">Uso do banco</td>
             <td class="w83">Carteira</td>
             <td class="w53">Espécie</td>
-            <td class="w123">Quantidade</td>
+            <td class="w183">Quantidade</td>
             <td class="w72">(x) Valor</td>
             <td class="w180">(=) Valor documento</td>
         </tr>
@@ -325,7 +325,7 @@
             <td class="w478 BL">
                 <div class="cpN pL6"></div>
             </td>
-            <td class="Ab BL">
+            <td class="Ab">
                 <div class="ctN pL6">Cód. baixa</div>
             </td>
         </tr>
