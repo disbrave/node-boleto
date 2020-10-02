@@ -157,7 +157,10 @@
         <tr>
             <td class="cpN Ar">Recibo do Pagador</td>
         </tr>
-    </table><br /><table class="w666">
+        <tr>
+            <td class="cpN Ac">Boleto 2ª via</td>
+        </tr>
+    </table><table class="w666">
         <tr class="BHead">
 			<td class="imgLogo Al"><img src="<%= logoURL %>" /></td>
             <td class="barra"></td>
@@ -165,7 +168,7 @@
             <td class="barra"></td>
 			<td class="w500 Ar Ab ld" id="linha-digitavel-1"><%= boleto['linha_digitavel'] %></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="ct h13 At">
             <td class="w298">Beneficiário</td>
             <td class="w126">Agência / Código do Beneficiário</td>
@@ -180,7 +183,7 @@
             <td></td>
 			<td class="Ar"><%= addTrailingZeros(boleto['nosso_numero'], 12) %>-<%= boleto['nosso_numero_dv'] %></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="ct h13">
             <td class="w132">CPF/CNPJ</td>
             <td class="w192">Número do aviso</td>
@@ -193,12 +196,12 @@
 			<td><%= formatDate(boleto['data_vencimento']) %></td>
 			<td class="Ar"><%= formatAmount(boleto['valor']) %></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="ct h13">
             <td class="w180">Grupo / Cota / Situação</td>
-            <td class="w112">Número Assembléia</td>
-            <td class="w113">Data Assembléia</td>
-            <td class="w113">Hora Assembléia</td>
+            <td class="w112">Número Assembleia</td>
+            <td class="w113">Data Assembleia</td>
+            <td class="w113">Hora Assembleia</td>
             <td class="w113">Valor do Bem</td>
         </tr>
         <tr class="cp h12 rBb Ab">
@@ -208,22 +211,38 @@
             <td><%= boleto['hora_assembleia'] %></td>
             <td class="Ar"><%= boleto['valor_do_bem'] %></td>
         </tr>
-    </table><table class="w666">
+    </table>
+    <table class="w666 BR">
+        <tr class="ct h13">
+            <td class="w180">Local da Próxima Assembleia</td>
+            <td class="w409">Endereço</td>
+        </tr>
+        <tr class="cp h12 rBb">
+            <td><%= boleto['local'] %></td>
+            <td><%= boleto['endereco'] %></td>
+        </tr>
+    </table><table class="w666 BR">
         <tr class="ct h13">
             <td class="w659">Pagador</td>
         </tr>
         <tr class="cp h12">
             <td><%- boleto['pagador'] || '' %></td>
         </tr>
+        <tr class="ct h13">
+            <td class="w659">Mensagem</td>
+        </tr>
+        <tr class="cp h12">
+            <td><%- boleto['mensagem'] || '' %></td>
+        </tr>
         <tr class="cp h12 rBb">
             <td></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="ctN h13">
             <td class="pL6">Instruções</td>
             <td class="w180 Ar">Autenticação mecânica</td>
         </tr>
-        <tr class="cpN h12">
+        <tr class="cpN h12 rBb">
             <td class="pL6"><%- boleto['instrucoes'] || '' %></td>
             <td class="pL6 Ar"></td>
         </tr>
@@ -242,7 +261,7 @@
             <td class="barra"></td>
 			<td class="w500 Ar Ab ld" id="linha-digitavel-2"><%= boleto['linha_digitavel'] %></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="ct h13">
             <td class="w472">Local de pagamento</td>
             <td class="w180">Vencimento</td>
@@ -251,7 +270,7 @@
 			<td><%= boleto['local_de_pagamento'] %></td>
 			<td class="Ar"><%= formatDate(boleto['data_vencimento']) %></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="ct h13">
             <td class="w472">Beneficiário</td>
             <td class="w180">Agência / Código beneficiário</td>
@@ -260,7 +279,7 @@
 			<td><%= boleto['cedente'] %></td>
 			<td class="Ar"><%= boleto['agencia'] %>/<%= boleto['codigo_cedente'] %></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="ct h13">
             <td class="w113">Data do documento</td>
             <td class="w113">Número do aviso</td>
@@ -277,7 +296,7 @@
 			<td><%= formatDate(boleto['data_emissao']) %></td>
 			<td class="Ar"><%= addTrailingZeros(boleto['nosso_numero'], 12) %>-<%= boleto['nosso_numero_dv'] %></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="ct h13">
             <td class="w113">Uso do banco</td>
             <td class="w83">Carteira</td>
@@ -294,7 +313,7 @@
             <td></td>
 			<td class="Ar"><%= formatAmount(boleto['valor']) %></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="rc6">
             <td class="w478">
                 <div class="ctN pL10">Instruções (Texto de responsabilidade do beneficiário)</div>
@@ -313,14 +332,14 @@
                 <div class="c"></div>
             </td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="ct h13">
             <td class="w659">Pagador</td>
         </tr>
         <tr class="cp h12">
 			<td class="At"><%- boleto['pagador'] || '' %></td>
         </tr>
-    </table><table class="w666">
+    </table><table class="w666 BR">
         <tr class="rBb">
             <td class="w478 BL">
                 <div class="cpN pL6"></div>

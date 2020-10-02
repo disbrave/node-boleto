@@ -4,7 +4,7 @@ var path = require('path')
 var app = express()
 
 var Boleto = require('../index').Boleto
-61
+
 var boleto = new Boleto({
   'banco': 'bradesco',
   'data_emissao': new Date(),
@@ -24,6 +24,9 @@ var boleto = new Boleto({
   'especie_doc': 'Recibo',
   'codigo_cedente': '469',
   'carteira': '25',
+  'mensagem':'Lorem ipsum dolor sit amet',
+  'local':'DISBRAVE CONSORCIOS',
+  'endereco':'SEPN 503 - ASA NORTE - 70730501 BRASÍLIA - DF',
   'pagador': 'Nome do pagador\nCPF: 000.000.000-00',
   'local_de_pagamento': 'PAGÁVEL EM QUALQUER BANCO ATÉ O VENCIMENTO.',
   'instrucoes': 'Sr. Caixa, aceitar o pagamento e não cobrar juros após o vencimento.',
