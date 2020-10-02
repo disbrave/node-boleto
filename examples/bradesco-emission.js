@@ -32,7 +32,8 @@ var boleto = new Boleto({
   'instrucoes': 'Sr. Caixa, aceitar o pagamento e não cobrar juros após o vencimento.',
   'codigo_barras': '23793839500000098613416090605614099300018240',
   'numero_documento': '23793416019060561409993000182407383950000009861',
-  'nosso_numero_dv': '2'
+  'nosso_numero_dv': '2',
+  'endereco_pagador': 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet '
 }, 2)
 
 app.use(express.static(path.join(__dirname, '/../')))
